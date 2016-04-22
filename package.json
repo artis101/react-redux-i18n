@@ -1,0 +1,24 @@
+{
+  "name": "react-redux-i18n",
+  "version": "0.0.1",
+  "author": "Zoover",
+  "main": "./build/index.js",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/zoover/react-redux-i18n.git"
+  },
+  "dependencies": {
+    "react-i18nify": "^1.1.0"
+  },
+  "devDependencies": {
+    "babel-eslint": "^5.0.0",
+    "babel-preset-es2015": "^6.3.13",
+    "babel-preset-react": "^6.3.13",
+    "babel-preset-stage-2": "^6.3.13",
+    "eslint-config-airbnb": "^5.0.0",
+    "eslint-plugin-react": "^3.16.0",
+    "gulp": "^3.9.0",
+    "gulp-babel": "^6.1.1",
+    "gulp-eslint": "^1.1.1"
+  }
+}
