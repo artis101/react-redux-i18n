@@ -85,5 +85,5 @@ I18n.l(1385856000000, { dateFormat: 'date.long' }); // => returns '1 december 20
 I18n.l(Math.PI, { maximumFractionDigits: 2 }); // => returns '3,14' for locale 'nl'
 ```
 
-For more information you can can check out the documentation of [react-i18nify](https://github.com/username/repo/blob/branch/docs/more_words.md)
+For more information you can can check out the documentation of [react-i18nify](https://github.com/zoover/react-i18nify)
 
