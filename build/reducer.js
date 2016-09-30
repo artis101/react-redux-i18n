@@ -9,7 +9,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 var _actions = require('./actions');
 
 exports.default = function () {
-  var state = arguments.length <= 0 || arguments[0] === undefined ? {} : arguments[0];
+  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
   var action = arguments[1];
 
   switch (action.type) {
@@ -17,13 +17,10 @@ exports.default = function () {
       return _extends({}, state, {
         translations: action.translations
       });
-      break;
     case _actions.SET_LOCALE:
       return _extends({}, state, {
         locale: action.locale
       });
-      break;
-
     default:
       return state;
   }

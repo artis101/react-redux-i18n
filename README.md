@@ -8,6 +8,8 @@ First install the package:
 npm i react-redux-i18n --save
 ```
 
+`redux-thunk` is a dependency, so you have it installed.
+
 Next, load the translations to be used, for example in `app.js`:
 ```javascript
 import { createStore, combineReducers } from 'redux';
