@@ -5,16 +5,13 @@ export default (state = {}, action) => {
     case LOAD_TRANSLATIONS:
       return {
         ...state,
-        translations: action.translations
+        translations: action.translations,
       };
-      break;
     case SET_LOCALE:
       return {
         ...state,
-        locale: action.locale
+        locale: action.locale,
       };
-      break;
-
     default:
       return state;
   }

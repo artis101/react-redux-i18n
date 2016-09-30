@@ -16,14 +16,14 @@ export function syncTranslationWithStore(store) {
     try {
       return store.getState().i18n.translations;
     } catch (e) {
-      console.error("Error getting translations from store!");
+      console.error('Error getting translations from store!');
     }
   });
   I18n.setLocaleGetter(() => {
     try {
-      return store.getState().i18n.locale
+      return store.getState().i18n.locale;
     } catch (e) {
-      console.error("Error getting locale from store!");
+      console.error('Error getting locale from store!');
     }
   });
 }

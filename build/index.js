@@ -54,14 +54,14 @@ function syncTranslationWithStore(store) {
     try {
       return store.getState().i18n.translations;
     } catch (e) {
-      console.error("Error getting translations from store!");
+      console.error('Error getting translations from store!');
     }
   });
   _reactI18nify.I18n.setLocaleGetter(function () {
     try {
       return store.getState().i18n.locale;
     } catch (e) {
-      console.error("Error getting locale from store!");
+      console.error('Error getting locale from store!');
     }
   });
 }
