@@ -1,6 +1,6 @@
 {
   "name": "react-redux-i18n",
-  "version": "0.0.3",
+  "version": "0.1.0",
   "author": "Zoover",
   "main": "./build/index.js",
   "repository": {
