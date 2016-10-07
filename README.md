@@ -44,8 +44,8 @@ const store =  createStore(
   });
 );
 syncTranslationWithStore(store)
-store.dispatch(loadTranslations(translationsObject);
-store.dispatch(setLocale('en');
+store.dispatch(loadTranslations(translationsObject));
+store.dispatch(setLocale('en'));
 
 ```
 
