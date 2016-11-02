@@ -12,7 +12,8 @@ npm i react-redux-i18n --save
 
 Next, load the translations to be used, for example in `app.js`:
 ```javascript
-import { createStore, combineReducers } from 'redux';
+import { createStore, combineReducers, applyMiddleware } from 'redux';
+import thunk from 'redux-thunk';
 import { loadTranslations, setLocale, syncTranslationWithStore, i18nReducer } from 'react-redux-i18n';
 import reducers from './reducers';
 
@@ -41,7 +42,8 @@ const store =  createStore(
   combineReducers({
     ...reducers,
     i18n: i18nReducer
-  });
+  }),
+  applyMiddleware(thunk)
 );
 syncTranslationWithStore(store)
 store.dispatch(loadTranslations(translationsObject));
