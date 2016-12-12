@@ -1,5 +1,5 @@
 # react-redux-i18n
-A binding library for redux to react-redux-i18n
+A binding library for redux to react-i18nify
 
 ## Usage
 
