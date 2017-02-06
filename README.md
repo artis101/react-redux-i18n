@@ -91,6 +91,23 @@ var AwesomeComponent = React.createClass({
     );
   }
 });
+
+```
+
+## Containers
+
+You have to pass the i18n to the component via redux container in order to update the component with new localization settings:
+```javascript
+import { connect } from 'react-redux';
+import AwesomeComponent from 'components/AwesomeComponent';
+
+const mapStateToProps = (state) => {
+    return {
+        i18n: state.i18n
+    }
+};
+
+export default connect(mapStateToProps)(AwesomeComponent);
 ```
 
 ## Keeping components updated
