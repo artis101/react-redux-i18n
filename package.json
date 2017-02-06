@@ -3,6 +3,14 @@
   "version": "1.7.3",
   "author": "Zoover",
   "main": "./build/index.js",
+  "scripts": {
+    "clean": "rimraf build",
+    "build": "gulp build",
+    "prepublish": "npm run clean && npm run build"
+  },
+  "files": [
+    "build"
+  ],
   "repository": {
     "type": "git",
     "url": "git://github.com/zoover/react-redux-i18n.git"
@@ -19,6 +27,7 @@
     "eslint-plugin-react": "^6.8.0",
     "gulp": "^3.9.1",
     "gulp-babel": "^6.1.2",
-    "gulp-eslint": "^3.0.1"
+    "gulp-eslint": "^3.0.1",
+    "rimraf": "^2.5.4"
   }
 }
