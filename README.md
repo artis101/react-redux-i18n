@@ -1,5 +1,8 @@
 # react-redux-i18n
+
 A binding library for redux to react-i18nify
+
+**Project needs a new maintainer https://github.com/zoover/react-redux-i18n/issues/35.**
 
 ## Usage
 
