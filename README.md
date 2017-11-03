@@ -130,3 +130,30 @@ For number formatting, the localize component and helper support all options as 
 
 [npm-url]: https://npmjs.org/package/react-redux-i18n
 [npm-image]: http://img.shields.io/npm/v/react-redux-i18n.svg
+
+## redux-immutable support
+
+If you are using [redux-immutable](https://github.com/gajus/redux-immutable) store you need to pass `true` as the second parameter in the `syncTranslationWithStore` method. 
+
+```javascript
+import { createStore, applyMiddleware } from 'redux';
+import { combineReducers } from "redux-immutable";
+import thunk from 'redux-thunk';
+import { loadTranslations, setLocale, syncTranslationWithStore, i18nReducer } from 'react-redux-i18n';
+import reducers from './reducers';
+
+const translationsObject = {
+    // Cut for brevity
+};
+
+const store =  createStore(
+  combineReducers({
+    ...reducers,
+    i18n: i18nReducer
+  }),
+  applyMiddleware(thunk)
+);
+syncTranslationWithStore(store, true) // Note the second parameter - is used to indicate that we are using redux-immutable
+store.dispatch(loadTranslations(translationsObject));
+store.dispatch(setLocale('en'));
+```
