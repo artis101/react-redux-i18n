@@ -2,18 +2,27 @@
 
 A binding library for redux to react-i18nify
 
-**Project needs a new maintainer https://github.com/zoover/react-redux-i18n/issues/35.**
-
 ## Usage
 
-First install the package:
+First install the package.
+
+Using `npm`:
 ```
 npm i react-redux-i18n --save
 ```
 
-`redux-thunk` is a dependency, so you need it installed.
+Using `yarn`:
+```
+yarn add react-redux-i18n
+```
 
-Next, load the translations to be used, for example in `app.js`:
+`redux-thunk` is an implicit dependency, so you need it installed and included in your project.
+
+To learn more about `redux-thunk`, refer to it's GitHub page:
+https://github.com/gaearon/redux-thunk
+
+Next, load the translations to be used, for example in `app.js` or in your apps entry point:
+
 ```javascript
 import { createStore, combineReducers, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
@@ -32,7 +41,9 @@ const translationsObject = {
     export: 'Export %{count} items',
     export_0: 'Nothing to export',
     export_1: 'Export %{count} item',
-    two_lines: 'Line 1<br />Line 2'
+    two_lines: 'Line 1<br />Line 2',
+    literal_two_lines: 'Line 1\
+Line 2'
   },
   nl: {
     application: {
@@ -45,7 +56,9 @@ const translationsObject = {
     export: 'Exporteer %{count} dingen',
     export_0: 'Niks te exporteren',
     export_1: 'Exporteer %{count} ding',
-    two_lines: 'Regel 1<br />Regel 2'
+    two_lines: 'Regel 1<br />Regel 2',
+    literal_two_lines: 'Regel 1\
+Regel 2'
   }
 };
 
@@ -62,9 +75,14 @@ store.dispatch(setLocale('en'));
 
 ```
 
+**NB!** Please note that reducer's name must be `i18n`! Make sure your project's reducers don't clash with it.
+
+
 ## Components
 
-The easiest way to translate or localize in your React components is by using the `Translate` and `Localize` components:
+The easiest way to translate or localize in your React components is by using the `Translate` and `Localize` components,
+directly exported from `react-i18nify` package:
+
 ```javascript
 var React = require('react');
 var Translate = require('react-redux-i18n').Translate;
@@ -107,6 +125,7 @@ argument to `setLocale` and/or `setTranslations`.
 ## Helpers
 
 If for some reason, you cannot use the components, you can use the `I18n.t` and `I18n.l` helpers instead:
+
 ```javascript
 var I18n = require('react-redux-i18n').I18n;
 
