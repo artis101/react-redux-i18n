@@ -1,7 +1,7 @@
 {
   "name": "react-redux-i18n",
   "version": "1.9.0",
-  "author": "Zoover",
+  "author": "Convious",
   "main": "./build/index.js",
   "scripts": {
     "clean": "rimraf build",
