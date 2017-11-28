@@ -11,17 +11,17 @@ export {
 
 export { default as i18nReducer } from './reducer';
 
-export function syncTranslationWithStore(store) {
+export function syncTranslationWithStore(store, isReduxImmutableStore) {
   I18n.setTranslationsGetter(() => {
     try {
-      return store.getState().i18n.translations;
+      return isReduxImmutableStore ? store.getState().get('i18n').translations : store.getState().i18n.translations;
     } catch (e) {
       console.error('Error getting translations from store!');
     }
   });
   I18n.setLocaleGetter(() => {
     try {
-      return store.getState().i18n.locale;
+      return isReduxImmutableStore ? store.getState().get('i18n').locale : store.getState().i18n.locale;
     } catch (e) {
       console.error('Error getting locale from store!');
     }
