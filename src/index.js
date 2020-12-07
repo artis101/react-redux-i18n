@@ -1,6 +1,6 @@
-import { I18n, Translate, Localize } from 'react-i18nify';
+import { I18n, Translate, Localize, setTranslationsGetter, setLocaleGetter, forceComponentsUpdate } from 'react-i18nify';
 
-export { I18n, Translate, Localize };
+export { I18n, Translate, Localize, setTranslationsGetter, setLocaleGetter, forceComponentsUpdate };
 
 export {
   SET_LOCALE,
@@ -12,6 +12,6 @@ export {
 export { default as i18nReducer } from './reducer';
 
 export function syncTranslationWithStore(store) {
-  I18n.setTranslationsGetter(() => store.getState().i18n.translations || {});
-  I18n.setLocaleGetter(() => store.getState().i18n.locale || '');
+  setTranslationsGetter(() => store.getState().i18n.translations || {});
+  setLocaleGetter(() => store.getState().i18n.locale || '');
 }
